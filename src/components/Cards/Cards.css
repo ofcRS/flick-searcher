@@ -1,0 +1,18 @@
+.Cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .Cards {
+        margin: 0 auto;
+        width: 768px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Cards {
+        margin: 0 auto;
+        width: 1200px;
+    }
+}

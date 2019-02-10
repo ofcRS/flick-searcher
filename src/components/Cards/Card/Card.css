@@ -1,0 +1,34 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    margin: 0 auto;
+}
+
+.Card img {
+    width: 280px;
+}
+
+@media (min-width: 768px) {
+    .Card {
+        width: 240px;
+        margin: 0 8px;
+    }
+
+    .Card img {
+        width: 240px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Card {
+        width: 200px;
+        margin: 0 20px;
+    }
+
+    .Card img {
+        width: 200px;
+    }
+}
+
