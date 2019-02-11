@@ -12,7 +12,7 @@ const Cards = props => {
                     return <Card
                         key={item.id}
                         title={item.title}
-                        image={item.image}
+                        image={item.poster_path}
                         overview={item.overview}
                     />
                 })

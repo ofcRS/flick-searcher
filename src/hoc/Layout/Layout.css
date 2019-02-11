@@ -1,0 +1,15 @@
+.Layout input {
+    display: block;
+    box-sizing: border-box;
+    width: 280px;
+    height: 30px;
+    padding: 0;
+    margin: 20px auto;
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .Layout input {
+        width: 700px;
+    }
+}

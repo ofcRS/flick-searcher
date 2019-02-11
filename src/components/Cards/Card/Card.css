@@ -25,10 +25,10 @@
     .Card {
         width: 200px;
         margin: 0 20px;
+        position: relative;
     }
 
     .Card img {
         width: 200px;
     }
 }
-
