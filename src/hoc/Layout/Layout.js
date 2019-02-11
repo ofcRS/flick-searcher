@@ -10,6 +10,15 @@ class Layout extends Component {
         value: ''
     };
 
+    componentDidMount() {
+        this.props.onPageLoad();
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset === document.documentElement.scrollHeight - document.documentElement.clientHeight && this.props.loadable) {
+                this.props.onPageScroll(this.props.query, this.props.currentPage + 1)
+            }
+        })
+    }
+
     changeHandler = event => {
         this.setState({
             value: event.target.value
@@ -29,10 +38,20 @@ class Layout extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        query: state.currentQuery,
+        loadable: state.loadable,
+        currentPage: state.currentPage
+    }
+};
+
 const mapActionsToProps = dispatch => {
     return {
-        onQueryChange: query => dispatch(actions.search(query))
+        onPageLoad: () => dispatch(actions.initMovies()),
+        onQueryChange: query => dispatch(actions.search(query)),
+        onPageScroll: (query, page) => dispatch(actions.autoLoading(query, page))
     };
 };
 
-export default connect(null, mapActionsToProps)(Layout);
+export default connect(mapStateToProps, mapActionsToProps)(Layout);

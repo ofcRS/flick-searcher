@@ -8,7 +8,7 @@ import Cards from '../../components/Cards/Cards';
 class FlickSearcher extends Component {
     render() {
         return (
-            <Cards items={this.props.movies}/>
+            <Cards items={this.props.movies} />
         )
     }
 }

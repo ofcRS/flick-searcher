@@ -4,8 +4,8 @@ import classes from './Card.css';
 
 const Card = props => {
     return <div className={classes.Card}>
-        {props.title}
-        <img src={`https://image.tmdb.org/t/p/w500/${props.image}`} alt={props.title} width="200px"/>
+        <img src={props.image ? `https://image.tmdb.org/t/p/w500/${props.image}` : 'https://cdn.browshot.com/static/images/not-found.png'} alt={props.title}/>
+        <p>{props.title}</p>
     </div>
 };
 
