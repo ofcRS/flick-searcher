@@ -4,17 +4,28 @@
     width: 280px;
     margin: 0 auto;
     cursor: pointer;
+    box-shadow: #303036 3px 3px 8px;
+}
+
+.Card:hover img{
+    filter: blur(3px);
 }
 
 .Card img {
     width: 280px;
+    max-height: 420px;
     min-height: 420px;
 }
 
 .Card p {
-     margin: 0;
-     padding-left: 6px;
- }
+    margin: 0;
+    padding-left: 6px;
+    color: #293d3d;
+}
+
+.Card a {
+    text-decoration: none;
+}
 
 @media (min-width: 768px) {
     .Card {
@@ -25,6 +36,7 @@
     .Card img {
         width: 240px;
         min-height: 360px;
+        max-height: 360px;
     }
 }
 
@@ -37,6 +49,7 @@
     .Card img {
         width: 200px;
         min-height: 300px;
+        max-height: 300px;
     }
 
 

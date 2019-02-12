@@ -14,6 +14,7 @@ const Cards = props => {
                         title={item.title}
                         image={item.poster_path}
                         overview={item.overview}
+                        clicked={() => props.clicked(item.id)}
                     />
                 })
             }

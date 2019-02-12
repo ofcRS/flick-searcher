@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from "react-router-dom";
 
-import * as actions from '../../store/actions/search';
+import * as actions from '../../store/actions/index';
 
 import classes from './Layout.css';
 
@@ -32,7 +33,9 @@ class Layout extends Component {
         return (
             <div className={classes.Layout}>
                 <input value={this.state.value} onChange={this.changeHandler}/>
-                {this.props.children}
+                <main>
+                    {this.props.children}
+                </main>
             </div>
         );
     }
@@ -40,9 +43,9 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
     return {
-        query: state.currentQuery,
-        loadable: state.loadable,
-        currentPage: state.currentPage
+        query: state.search.currentQuery,
+        loadable: state.search.loadable,
+        currentPage: state.search.currentPage
     }
 };
 
@@ -54,4 +57,4 @@ const mapActionsToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(Layout);
+export default withRouter(connect(mapStateToProps, mapActionsToProps)(Layout));

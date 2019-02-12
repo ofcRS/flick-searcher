@@ -8,7 +8,7 @@ const initialState = {
     loadable: false
 };
 
-const search = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case(actionTypes.SEARCH_SUCCESS):
             return {
@@ -36,4 +36,4 @@ const search = (state = initialState, action) => {
     }
 };
 
-export default search;
+export default reducer;
