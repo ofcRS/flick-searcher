@@ -1,8 +1,40 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import styled from 'styled-components';
 
-import classes from './FlickPage.css'
+const StyledFlickPage = styled.div`
+    width: 320px;
+    margin: 0 auto;
+    
+    & img {
+        width: 150px;
+        margin-right: 8px;
+    }
+    
+    & p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media (min-width: 768px) {
+        width: 768px;
+        
+    
+        & img {
+            width: 300px;
+            float: left;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        width: 1200px;
+    
+        & img {
+            width: 350px;
+        }
+    }
+`;
 
 class FlickPage extends Component {
     render() {
@@ -20,9 +52,9 @@ class FlickPage extends Component {
             flickInfo = <Redirect to="/"/>
         }
         return (
-            <div className={classes.FlickPage}>
+            <StyledFlickPage>
                 {flickInfo}
-            </div>
+            </StyledFlickPage>
         )
     }
 }

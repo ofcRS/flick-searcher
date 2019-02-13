@@ -1,10 +1,28 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from "react-router-dom";
+import styled from 'styled-components';
 
 import * as actions from '../../store/actions/index';
 
-import classes from './Layout.css';
+const StyledLayout = styled.div`
+  & input {
+    display: block;
+    box-sizing: border-box;
+    width: 280px;
+    height: 30px;
+    padding: 0;
+    margin: 20px auto;
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    & input {
+        width: 700px;
+    }
+  }
+`;
+
 
 class Layout extends Component {
     state = {
@@ -31,12 +49,12 @@ class Layout extends Component {
 
     render() {
         return (
-            <div className={classes.Layout}>
+            <StyledLayout>
                 <input value={this.state.value} onChange={this.changeHandler}/>
                 <main>
                     {this.props.children}
                 </main>
-            </div>
+            </StyledLayout>
         );
     }
 }

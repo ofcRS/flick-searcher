@@ -1,12 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Card from './Card/Card';
 
-import classes from './Cards.css';
+const StyledCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Cards = props => {
     return (
-        <div className={classes.Cards}>
+        <StyledCards>
             {
                 props.items.map(item => {
                     return <Card
@@ -18,7 +22,7 @@ const Cards = props => {
                     />
                 })
             }
-        </div>
+        </StyledCards>
     )
 };
 
