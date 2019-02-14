@@ -5,9 +5,10 @@ export {
 } from './search';
 
 export {
-    initFlick
+    fetchFlick
 } from './flick';
 
 export {
-    addToFavorites
+    addToFavorites,
+    removeFavorites
 } from './favorites'

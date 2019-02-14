@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import * as actionTypes from './actionTypes';
 
-export const initFlick = id => {
+export const fetchFlick = id => {
     return dispatch => {
         dispatch({
             type: actionTypes.FETCH_FLICK

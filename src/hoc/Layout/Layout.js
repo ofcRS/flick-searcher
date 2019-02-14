@@ -1,28 +1,43 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter, Link} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import styled from 'styled-components';
+
+import NavigationItems from '../../components/Navigation/NavigationItems';
 
 import * as actions from '../../store/actions/index';
 
 const StyledLayout = styled.div`
-  padding: 0 20px;
-
-  & input {
-    display: block;
-    box-sizing: border-box;
+  header {
+    margin-bottom: 20px;
+    padding: 0;
     width: 100%;
-    height: 30px;
+    background-color: #004c8c;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    height: 50px;
     padding: 0 15px 0;
-    margin: 20px auto;
+    margin: 0 auto;
     border: 1px solid black;
     border-radius: 4px;
+    font-size: 25px;
     outline: none;
   }
 
+  input {
+    box-sizing: border-box;
+  }
+
+  main {
+    padding: 0 20px;
+  }
+
   @media (min-width: 768px) {
-    & input {
-        width: 700px;
+    input {
+      width: 768px;
     }
   }
 `;
@@ -54,8 +69,10 @@ class Layout extends Component {
     render() {
         return (
             <StyledLayout>
-                <input value={this.state.value} onChange={this.changeHandler}/>
-                <Link to="/favorites">Serdechko</Link>
+                <header>
+                    <input value={this.state.value} onChange={this.changeHandler}/>
+                    <NavigationItems />
+                </header>
                 <main>
                     {this.props.children}
                 </main>

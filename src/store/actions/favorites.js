@@ -6,3 +6,10 @@ export const addToFavorites = flickData => {
         flick: flickData
     }
 };
+
+export const removeFavorites = flickIndex => {
+    return {
+        type: actionTypes.REMOVE_FAVORITES,
+        flickIndex: flickIndex
+    }
+};

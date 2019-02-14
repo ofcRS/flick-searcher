@@ -37,7 +37,7 @@ const mapStateToProps = state => {
 
 const mapActionsToProps = dispatch => {
     return {
-        onFlickChoice: (id) => dispatch(actions.initFlick(id))
+        onFlickChoice: (id) => dispatch(actions.fetchFlick(id))
     }
 };
 

@@ -5,33 +5,33 @@ import styled from 'styled-components';
 const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     cursor: pointer;
     box-shadow: #303036 3px 3px 8px;
     
-    &:hover img{
+    :hover img{
         filter: blur(3px);
     }
     
-    & img {
+    img {
         width: 320px;
         max-height: 420px;
         min-height: 420px;
     }
     
-    & p {
+    p {
         margin: 0;
         padding-left: 6px;
         color: #293d3d;
     }
     
-    & a {
+    a {
         text-decoration: none;
     }
     
     @media (min-width: 768px) {
         width: 240px;
-        margin: 0 8px;
+        margin: 0 8px 10px;
     
         & img {
             width: 240px;
