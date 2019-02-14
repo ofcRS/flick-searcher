@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import FlickSearcher from './containers/FlickSearcher/FlickSearcher';
 import FlickPage from './containers/FlickPage/FlickPage';
 import Layout from './hoc/Layout/Layout';
+import Favorites from './containers/Favorites/Favorites';
 
 class App extends Component {
     render() {
@@ -12,6 +13,7 @@ class App extends Component {
                 <Layout>
                     <Switch>
                         <Route path="/flick" component={FlickPage}/>
+                        <Route path="/favorites" component={Favorites}/>
                         <Route path="/" component={FlickSearcher}/>
                     </Switch>
                 </Layout>

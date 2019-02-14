@@ -9,7 +9,6 @@ export const initMovies = () => {
         });
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=67885b911e84060b5f3c824b510315df`)
             .then(res => {
-                console.log(res);
                 dispatch({
                     type: actionTypes.INIT_MOVIES_SUCCESS,
                     data: res.data

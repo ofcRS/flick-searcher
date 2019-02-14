@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from "react-router-dom";
+import {withRouter, Link} from "react-router-dom";
 import styled from 'styled-components';
 
 import * as actions from '../../store/actions/index';
 
 const StyledLayout = styled.div`
+  padding: 0 20px;
+
   & input {
     display: block;
     box-sizing: border-box;
-    width: 280px;
+    width: 100%;
     height: 30px;
-    padding: 0;
+    padding: 0 15px 0;
     margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 4px;
     outline: none;
   }
 
@@ -51,6 +55,7 @@ class Layout extends Component {
         return (
             <StyledLayout>
                 <input value={this.state.value} onChange={this.changeHandler}/>
+                <Link to="/favorites">Serdechko</Link>
                 <main>
                     {this.props.children}
                 </main>

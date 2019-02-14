@@ -7,3 +7,7 @@ export {
 export {
     initFlick
 } from './flick';
+
+export {
+    addToFavorites
+} from './favorites'
